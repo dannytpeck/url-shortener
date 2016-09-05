@@ -3,7 +3,7 @@ const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 // Database
 MongoClient.connect('mongodb://manonfire:igniteyourlife@ds147985.mlab.com:47985/url-shortener', (err, db) => {
@@ -34,7 +34,7 @@ MongoClient.connect('mongodb://manonfire:igniteyourlife@ds147985.mlab.com:47985/
       
       res.json({
         original_url: 'http://' + req.params.url,
-        short_url: 'https://XXXX.herokuapp.com/' + number
+        short_url: 'https://minigurl.herokuapp.com/' + number
       });
       
       let document = {
@@ -61,7 +61,7 @@ MongoClient.connect('mongodb://manonfire:igniteyourlife@ds147985.mlab.com:47985/
       
       res.json({
         original_url: 'https://' + req.params.url,
-        short_url: 'https://XXXX.herokuapp.com/' + number
+        short_url: 'https://minigurl.herokuapp.com/' + number
       });
       
       let document = {
