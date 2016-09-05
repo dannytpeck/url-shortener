@@ -29,7 +29,7 @@ MongoClient.connect(process.env.MONGOLAB_URI, (err, db) => {
   });
 
   app.get('/new/http://:url', (req, res) => {
-    if (/\w+\.\w{2,}/.test(req.params.url)) {
+    if (/\w+\..{2,}/.test(req.params.url)) {
       let number = Math.floor(Math.random() * 10000);
       
       res.json({
@@ -56,7 +56,7 @@ MongoClient.connect(process.env.MONGOLAB_URI, (err, db) => {
   });
 
   app.get('/new/https://:url', (req, res) => {
-    if (/\w+\.\w{2,}/.test(req.params.url)) {
+    if (/\w+\..{2,}/.test(req.params.url)) {
       let number = Math.floor(Math.random() * 10000);
       
       res.json({
