@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 // Database
-MongoClient.connect('mongodb://manonfire:igniteyourlife@ds147985.mlab.com:47985/url-shortener', (err, db) => {
+MongoClient.connect(process.env.MONGOLAB_URI, (err, db) => {
   if (err) return console.log(err);
 
   app.get('/', (req, res) => {
