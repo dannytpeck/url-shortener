@@ -28,7 +28,7 @@ MongoClient.connect(process.env.MONGOLAB_URI, (err, db) => {
     });
   });
 
-  app.get('/new/http://:url', (req, res) => {
+  app.get('/new/http://:url(*)', (req, res) => {
     if (/\w+\..{2,}/.test(req.params.url)) {
       let number = Math.floor(Math.random() * 10000);
       
@@ -54,12 +54,8 @@ MongoClient.connect(process.env.MONGOLAB_URI, (err, db) => {
       });
     }
   });
-
-  app.get('/test/:test(*)', (req, res) => {
-    res.send(req.params.test);
-  });
-
-  app.get('/new/https://:url', (req, res) => {
+  
+  app.get('/new/https://:url(*)', (req, res) => {
     if (/\w+\..{2,}/.test(req.params.url)) {
       let number = Math.floor(Math.random() * 10000);
       
